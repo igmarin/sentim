@@ -21,19 +21,20 @@ Or install it yourself as:
     gem install sentim
 
 ## Usage
+   client = Sentim::Client.new(adapter: :test, stubs: stub)
+    sentiment = client.sentiment_validation
+    response = sentiment.validate(text: 'Hello')
 
-client = client.sentiment_validation
-res = client.validate(text: "Hello my friend!")
 
-res.result
 
+    response.result.result
 # <Sentim::Object:0x0000000133d14668
 
  @attributes=#<OpenStruct polarity=0.0, type="neutral">>
  res.result.type
  "neutral"
 
-res.sentences
+response.sentences
 [{"sentence"=>"Hello my friend.", "sentiment"=>{"polarity"=>0.0, "type"=>"neutral"}},
  {"sentence"=>"how are you?", "sentiment"=>{"polarity"=>0.0, "type"=>"neutral"}}]
 
