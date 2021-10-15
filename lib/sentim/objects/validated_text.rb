@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
 module Sentim
-  class Sentences < Object
+  class ValidatedText < Object
   end
 end

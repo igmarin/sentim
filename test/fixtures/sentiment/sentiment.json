@@ -1,0 +1,15 @@
+{
+    "result": {
+        "polarity": 0.0,
+        "type": "neutral"
+    },
+    "sentences": [
+        {
+            "sentence": "Hello",
+            "sentiment": {
+                "polarity": 0.0,
+                "type": "neutral"
+            }
+        }
+    ]
+}

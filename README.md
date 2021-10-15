@@ -22,13 +22,23 @@ Or install it yourself as:
 
 ## Usage
 
-client = Sentim::Client.new
-client.validate_text("Hello friends!!!").body
+client = client.sentiment_validation
+res = client.validate(text: "Hello my friend!")
 
-{"result"=>{"polarity"=>0.0, "type"=>"neutral"},
- "sentences"=>
-  [{"sentence"=>"Hello friends!!!",
-    "sentiment"=>{"polarity"=>0.0, "type"=>"neutral"}}]}
+res.result
+
+# <Sentim::Object:0x0000000133d14668
+
+ @attributes=#<OpenStruct polarity=0.0, type="neutral">>
+ res.result.type
+ "neutral"
+
+res.sentences
+[{"sentence"=>"Hello my friend.", "sentiment"=>{"polarity"=>0.0, "type"=>"neutral"}},
+ {"sentence"=>"how are you?", "sentiment"=>{"polarity"=>0.0, "type"=>"neutral"}}]
+
+ res.sentences.first
+{"sentence"=>"Hello my friend.", "sentiment"=>{"polarity"=>0.0, "type"=>"neutral"}
 
 ## Development
 
