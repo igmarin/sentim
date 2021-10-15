@@ -6,7 +6,7 @@ require 'json'
 
 module Sentim
   class Client
-    API_URL = "https://sentim-api.herokuapp.com/api/v1/"
+    API_URL = 'https://sentim-api.herokuapp.com/api/v1/'
 
     attr_reader :adapter
 
@@ -23,11 +23,8 @@ module Sentim
       end
     end
 
-
     def validate_text(text)
-      connection.post do |request|
-        request.body = { text: text }.to_json
-      end
+      connection.post { |r| r.body = { text: text }.to_json }
     end
   end
 end
